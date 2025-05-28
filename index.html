@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eCommerce Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #333; color: #fff; padding: 1rem; text-align: center; }
+    nav { background: #555; color: #fff; padding: 1rem; display: flex; justify-content: space-between; }
+    .products, .cart, .auth, .admin { padding: 1rem; }
+    .product, .cart-item { border: 1px solid #ccc; padding: 1rem; margin: 0.5rem; display: inline-block; width: 200px; }
+    .admin { background: #f0f0f0; }
+    button { margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My eCommerce Store</h1>
+  </header>
+
+  <nav>
+    <div>User: Guest</div>
+    <div>
+      <button onclick="show('products')">Shop</button>
+      <button onclick="show('cart')">Cart</button>
+      <button onclick="show('auth')">Login/Register</button>
+      <button onclick="show('admin')">Admin Panel</button>
+    </div>
+  </nav>
+
+  <div id="products" class="products">
+    <h2>Products</h2>
+    <div class="product">
+      <h3>Product 1</h3>
+      <p>$10.00</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <h3>Product 2</h3>
+      <p>$20.00</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div id="cart" class="cart" style="display:none;">
+    <h2>Your Cart</h2>
+    <div class="cart-item">
+      <p>Product 1 - $10.00</p>
+      <button>Remove</button>
+    </div>
+  </div>
+
+  <div id="auth" class="auth" style="display:none;">
+    <h2>Login</h2>
+    <input type="text" placeholder="Email" /><br/>
+    <input type="password" placeholder="Password" /><br/>
+    <button>Login</button>
+    <p>Don't have an account? <a href="#">Register</a></p>
+  </div>
+
+  <div id="admin" class="admin" style="display:none;">
+    <h2>Admin Panel</h2>
+    <p>Manage Products, Orders, Users</p>
+    <button>Add New Product</button>
+    <button>View Orders</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My eCommerce</p>
+  </footer>
+
+  <script>
+    function show(section) {
+      document.getElementById('products').style.display = 'none';
+      document.getElementById('cart').style.display = 'none';
+      document.getElementById('auth').style.display = 'none';
+      document.getElementById('admin').style.display = 'none';
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
