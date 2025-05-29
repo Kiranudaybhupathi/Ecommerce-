@@ -3,49 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShopifyX - Next Level Store</title>
+  <title>ShopifyX - Mobile Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: #f0f4f8;
-      color: #333;
+      background: #f7f9fc;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
-      padding: 1.5rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
-    /* Hamburger Menu */
     #menu-toggle {
       display: none;
     }
 
     label[for="menu-toggle"] {
       display: block;
-      background: #2c5364;
+      background: #2a5298;
       color: white;
       padding: 1rem;
       text-align: right;
+      font-size: 1.5rem;
       cursor: pointer;
     }
 
     nav {
       display: none;
-      background: #2c5364;
+      background: #2a5298;
       text-align: center;
     }
 
@@ -53,7 +51,7 @@
       display: block;
       color: white;
       padding: 1rem;
-      border-top: 1px solid #1c3b52;
+      border-top: 1px solid rgba(255,255,255,0.2);
       text-decoration: none;
       font-weight: bold;
     }
@@ -63,31 +61,31 @@
     }
 
     section {
-      display: none;
       padding: 2rem 1rem;
+      display: none;
+      min-height: 100vh;
     }
 
     section:target {
       display: block;
-      animation: fadeIn 0.5s ease-in;
+      animation: fadeIn 0.3s ease-in;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     .hero {
-      background: linear-gradient(to right, #43cea2, #185a9d);
+      background: linear-gradient(to right, #ff9966, #ff5e62);
       color: white;
-      padding: 3rem 1rem;
-      text-align: center;
+      padding: 2rem 1rem;
       border-radius: 10px;
+      text-align: center;
     }
 
     .products {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -96,18 +94,19 @@
       background: white;
       padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .product h3 {
-      margin-top: 1rem;
+    .product img {
+      width: 100%;
+      border-radius: 8px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       padding: 0.5rem 1rem;
-      background: #185a9d;
+      background: #2a5298;
       color: white;
       border-radius: 5px;
       text-decoration: none;
@@ -115,18 +114,11 @@
     }
 
     footer {
-      background: #2c5364;
+      background: #2a5298;
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
-    }
-
-    /* Responsive tweaks */
-    @media (min-width: 768px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
   </style>
 </head>
@@ -134,11 +126,11 @@
 
   <header>
     <h1>ShopifyX</h1>
-    <p>Your Ultimate Online Store</p>
+    <p>Only Deals. Only Vibes. 🛍️</p>
   </header>
 
   <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle">&#9776; Menu</label>
+  <label for="menu-toggle">&#9776;</label>
   <nav>
     <a href="#home">Home</a>
     <a href="#shop">Shop</a>
@@ -151,51 +143,51 @@
   <section id="home">
     <div class="hero">
       <h2>Welcome to ShopifyX</h2>
-      <p>Discover top deals on trending products!</p>
+      <p>Best mobile-friendly shopping experience</p>
     </div>
   </section>
 
   <section id="shop">
-    <h2>Shop Products</h2>
+    <h2>Shop Now</h2>
     <div class="products">
       <div class="product">
-        <img src="https://via.placeholder.com/300x150" alt="Product" width="100%">
-        <h3>Smartphone X</h3>
-        <p>$499.99</p>
-        <a href="#cart" class="btn">Add to Cart</a>
+        <img src="https://via.placeholder.com/300x150" alt="Phone" />
+        <h3>Smartphone Max</h3>
+        <p>$699</p>
+        <a class="btn" href="#cart">Add to Cart</a>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/300x150" alt="Product" width="100%">
-        <h3>Wireless Earbuds</h3>
-        <p>$89.99</p>
-        <a href="#cart" class="btn">Add to Cart</a>
+        <img src="https://via.placeholder.com/300x150" alt="Watch" />
+        <h3>Smart Watch Pro</h3>
+        <p>$149</p>
+        <a class="btn" href="#cart">Add to Cart</a>
       </div>
     </div>
   </section>
 
   <section id="cart">
     <h2>Your Cart</h2>
-    <p>You have 1 item in your cart.</p>
-    <a href="#" class="btn">Checkout</a>
+    <p>You have 2 items in your cart.</p>
+    <a class="btn" href="#">Checkout</a>
   </section>
 
   <section id="login">
     <h2>Login</h2>
-    <p>Login form will go here.</p>
+    <p>Login form coming soon...</p>
   </section>
 
   <section id="register">
     <h2>Register</h2>
-    <p>Register form will go here.</p>
+    <p>Create your account to shop better!</p>
   </section>
 
   <section id="admin">
     <h2>Admin Panel</h2>
-    <p>Manage products, orders, and users.</p>
+    <p>Manage products and orders here.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 ShopifyX. Built to impress 🛍️</p>
+    <p>&copy; 2025 ShopifyX | Built mobile-first 🚀</p>
   </footer>
 
 </body>
