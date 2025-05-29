@@ -3,77 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShopifyX - Mobile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Surprise 🛍️ ShopifyX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: #f0f8ff;
-      color: #333;
-      padding: 1rem;
+      font-family: 'Outfit', sans-serif;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
     }
 
-    header, footer {
-      background: #0d47a1;
+    header {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
       color: white;
       text-align: center;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      padding: 2rem 1rem;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
     }
 
-    details {
-      background: white;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
     }
 
-    summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
+    header p {
+      font-size: 1rem;
+      opacity: 0.95;
     }
 
-    summary h3 {
-      font-size: 1.1rem;
-      color: #1976d2;
-      margin-bottom: 0.2rem;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem 0;
+      background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    summary p {
-      font-size: 0.9rem;
+    nav a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f1f5ff;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
       color: #555;
-    }
-
-    .content {
-      padding: 1rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #1976d2;
+      background: #4f46e5;
       color: white;
-      border-radius: 5px;
-      text-align: center;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      border-radius: 30px;
       font-weight: bold;
-      margin-top: 0.5rem;
       text-decoration: none;
+      transition: 0.3s ease;
     }
 
-    img {
+    .btn:hover {
+      background: #3730a3;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
       width: 100%;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #10b981;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      background: #f1f5f9;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
@@ -81,89 +157,54 @@
 
   <header>
     <h1>ShopifyX</h1>
-    <p>Mobile Storefront</p>
+    <p>The Future of Mobile Shopping</p>
   </header>
 
-  <details>
-    <summary>
-      <h3>🏠 Home</h3>
-      <p>Discover amazing deals</p>
-      <span class="btn">Explore</span>
-    </summary>
-    <div class="content">
-      <p>Welcome to ShopifyX – your one-stop online shop. Browse, buy, and save from anywhere!</p>
-    </div>
-  </details>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Cart</a>
+    <a href="#">Login</a>
+  </nav>
 
-  <details>
-    <summary>
-      <h3>🛍️ Shop</h3>
-      <p>Top trending products</p>
-      <span class="btn">View Products</span>
-    </summary>
-    <div class="content">
-      <img src="https://via.placeholder.com/300x150" alt="Headphones">
-      <h4>Wireless Headphones - $59.99</h4>
-      <p>Premium sound quality with long-lasting battery life.</p>
-      <br/>
-      <img src="https://via.placeholder.com/300x150" alt="Smartwatch">
-      <h4>Smart Watch - $129.99</h4>
-      <p>Track your fitness and stay connected on the go.</p>
-    </div>
-  </details>
+  <section class="hero">
+    <h2>Discover, Love, Shop</h2>
+    <p>Hand-picked products. Delivered to your door.</p>
+    <a href="#" class="btn">Start Shopping</a>
+  </section>
 
-  <details>
-    <summary>
-      <h3>🛒 Cart</h3>
-      <p>1 item in your cart</p>
-      <span class="btn">Checkout</span>
-    </summary>
-    <div class="content">
-      <p>Wireless Headphones - $59.99</p>
-      <p><strong>Total:</strong> $59.99</p>
+  <section class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606813902545-12f6f35eec4e" alt="Sneakers">
+      <div class="card-content">
+        <h3>AirMax Sneakers</h3>
+        <p>Comfortable, stylish, and perfect for daily wear.</p>
+        <p class="price">$79.99</p>
+      </div>
     </div>
-  </details>
 
-  <details>
-    <summary>
-      <h3>🔐 Login</h3>
-      <p>Access your account</p>
-      <span class="btn">Sign In</span>
-    </summary>
-    <div class="content">
-      <p>Email: you@example.com</p>
-      <p>Password: ••••••••</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600180758890-d05ed67307e6" alt="Smartwatch">
+      <div class="card-content">
+        <h3>Smart Watch</h3>
+        <p>Track fitness, calls & notifications.</p>
+        <p class="price">$149.99</p>
+      </div>
     </div>
-  </details>
 
-  <details>
-    <summary>
-      <h3>📝 Register</h3>
-      <p>Create a new account</p>
-      <span class="btn">Join Now</span>
-    </summary>
-    <div class="content">
-      <p>Name, Email, Password — Signup in seconds!</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606814079620-40458f8bafbd" alt="Headphones">
+      <div class="card-content">
+        <h3>Noise-Cancelling Headphones</h3>
+        <p>Immersive sound with active noise canceling.</p>
+        <p class="price">$129.99</p>
+      </div>
     </div>
-  </details>
-
-  <details>
-    <summary>
-      <h3>🛠️ Admin</h3>
-      <p>Manage store backend</p>
-      <span class="btn">Admin Panel</span>
-    </summary>
-    <div class="content">
-      <ul>
-        <li>🧾 View Orders</li>
-        <li>🧍 Manage Users</li>
-        <li>📦 Edit Products</li>
-      </ul>
-    </div>
-  </details>
+  </section>
 
   <footer>
-    <p>&copy; 2025 ShopifyX</p>
+    &copy; 2025 ShopifyX. All rights reserved.<br/>
+    Built with ❤️ by Uday Bhupathi.
   </footer>
 
 </body>
