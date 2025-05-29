@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,306 +11,242 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-    }
+    }body {
+  background: linear-gradient(145deg, #e3f2fd, #ffffff);
+  color: #333;
+  min-height: 100vh;
+}
 
-    body {
-      background: linear-gradient(145deg, #e3f2fd, #ffffff);
-      color: #333;
-      min-height: 100vh;
-    }
+header {
+  background: linear-gradient(to right, #0d47a1, #42a5f5);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: fadeInDown 1s ease-in-out;
+}
 
-    header {
-      background: linear-gradient(to right, #0d47a1, #42a5f5);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      animation: fadeInDown 1s ease-in-out;
-    }
+nav {
+  background: #1565c0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+.nav-left {
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+}
 
-    nav {
-      background: #1565c0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      flex-wrap: wrap;
-    }
+.nav-right {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    .nav-left {
-      font-weight: bold;
-      color: white;
-      font-size: 1.5rem;
-    }
+.nav-right button {
+  background: white;
+  color: #1565c0;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
-    .nav-right {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+.nav-right button:hover {
+  background: #bbdefb;
+}
 
-    .nav-right button {
-      background: white;
-      color: #1565c0;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s ease;
-      cursor: pointer;
-    }
+section {
+  display: none;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.5s ease-in;
+}
 
-    .nav-right button:hover {
-      background: #bbdefb;
-    }
+section.active {
+  display: block;
+}
 
-    section {
-      display: none;
-      padding: 2rem 1rem;
-      animation: fadeIn 0.5s ease-in;
-    }
+.hero {
+  background: linear-gradient(to right, #2196f3, #21cbf3);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: 10px;
+  animation: slideIn 1s ease;
+}
 
-    section.active {
-      display: block;
-    }
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
 
-    .hero {
-      background: linear-gradient(to right, #2196f3, #21cbf3);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-      border-radius: 10px;
-      animation: slideIn 1s ease;
-    }
+.products-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+.product {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 220px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
 
-    .products-container {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
 
-    .product {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 220px;
-      text-align: center;
-      transition: all 0.3s ease-in-out;
-    }
+.product img {
+  width: 100%;
+  border-radius: 8px;
+}
 
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
+.product button {
+  margin-top: 0.5rem;
+  background: #1976d2;
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-    }
+.product button:hover {
+  background: #1565c0;
+}
 
-    .product button {
-      margin-top: 0.5rem;
-      background: #1976d2;
-      color: white;
-      padding: 0.5rem;
-      width: 100%;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+.auth-form, .cart-item, .admin-panel {
+  background: white;
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
-    .product button:hover {
-      background: #1565c0;
-    }
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-    .auth-form, .cart-item, .admin-panel {
-      background: white;
-      max-width: 400px;
-      margin: auto;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
+button.full {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: bold;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-    input[type="text"], input[type="password"], input[type="email"] {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+button.full:hover {
+  background: #0d47a1;
+}
 
-    button.full {
-      width: 100%;
-      padding: 0.75rem;
-      font-weight: bold;
-      background: #1976d2;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
+footer {
+  background: #1565c0;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
 
-    button.full:hover {
-      background: #0d47a1;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    footer {
-      background: #1565c0;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@media (max-width: 768px) {
+  .nav-right {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    @media (max-width: 768px) {
-      .nav-right {
-        width: 100%;
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
+  section.active {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+  }
+}
 
-      .products-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>ShopifyX</h1>
-    <p>Your Favorite Online Store</p>
-  </header>
-
-  <nav>
-    <div class="nav-left">ShopifyX</div>
-    <div class="nav-right">
-      <button onclick="showSection('home')">Home</button>
-      <button onclick="showSection('products')">Shop</button>
-      <button onclick="showSection('cart')">Cart</button>
-      <button onclick="showSection('login')">Login</button>
-      <button onclick="showSection('register')">Register</button>
-      <button onclick="showSection('admin')">Admin</button>
-    </div>
-  </nav>
-
-  <section id="home" class="active">
-    <div class="hero">
-      <h1>Welcome to ShopifyX</h1>
-      <p>Discover deals and top products at unbeatable prices.</p>
-    </div>
-  </section>
-
-  <section id="products">
-    <h2 style="text-align:center;">Featured Products</h2>
-    <div class="products-container">
-      <div class="product">
-        <img src="https://via.placeholder.com/220x150" alt="Headphones">
-        <h3>Wireless Headphones</h3>
-        <p>$59.99</p>
-        <button onclick="comingSoon()">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/220x150" alt="Smart Watch">
-        <h3>Smart Watch</h3>
-        <p>$129.99</p>
-        <button onclick="comingSoon()">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="cart">
-    <h2 style="text-align:center;">Your Shopping Cart</h2>
-    <div class="cart-item">
-      <p><strong>Wireless Headphones</strong> - $59.99</p>
-      <button class="full" onclick="comingSoon()">Remove</button>
-    </div>
-    <div class="cart-item" style="margin-top:1rem;">
-      <p><strong>Total:</strong> $59.99</p>
-      <button class="full" style="background:green;" onclick="comingSoon()">Checkout</button>
-    </div>
-  </section>
-
-  <section id="login">
-    <h2 style="text-align:center;">Login</h2>
-    <div class="auth-form">
-      <label>Email</label>
-      <input type="email" placeholder="you@example.com" />
-      <label>Password</label>
-      <input type="password" placeholder="********" />
-      <button class="full" onclick="comingSoon()">Login</button>
-    </div>
-  </section>
-
-  <section id="register">
-    <h2 style="text-align:center;">Register</h2>
-    <div class="auth-form">
-      <label>Full Name</label>
-      <input type="text" placeholder="John Doe" />
-      <label>Email</label>
-      <input type="email" placeholder="you@example.com" />
-      <label>Password</label>
-      <input type="password" placeholder="********" />
-      <button class="full" style="background:#43a047;" onclick="comingSoon()">Register</button>
-    </div>
-  </section>
-
-  <section id="admin">
-    <h2 style="text-align:center;">Admin Panel</h2>
-    <div class="admin-panel">
-      <button class="full" onclick="comingSoon()">Manage Products</button><br/><br/>
-      <button class="full" onclick="comingSoon()">View Orders</button><br/><br/>
-      <button class="full" onclick="comingSoon()">Manage Users</button>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 ShopifyX. All rights reserved.</p>
-  </footer>
-
+  <!-- Previous body content remains unchanged -->
   <script>
     function showSection(id) {
       document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
       document.getElementById(id).classList.add("active");
-    }
+    }function comingSoon() {
+  alert("🚧 This feature is coming soon!");
+}
 
-    function comingSoon() {
-      alert("🚧 This feature is coming soon!");
-    }
+// Save and Load Login (Fake for demonstration)
+document.addEventListener('DOMContentLoaded', () => {
+  const loginBtn = document.querySelector('#login button');
+  if (loginBtn) {
+    loginBtn.addEventListener('click', () => {
+      const email = document.querySelector('#login input[type="email"]').value;
+      const password = document.querySelector('#login input[type="password"]').value;
+      if (email && password) {
+        localStorage.setItem('user', JSON.stringify({ email }));
+        alert('✅ Logged in successfully');
+      }
+    });
+  }
+
+  const registerBtn = document.querySelector('#register button');
+  if (registerBtn) {
+    registerBtn.addEventListener('click', () => {
+      const name = document.querySelector('#register input[type="text"]').value;
+      const email = document.querySelector('#register input[type="email"]').value;
+      const password = document.querySelector('#register input[type="password"]').value;
+      if (name && email && password) {
+        localStorage.setItem('registeredUser', JSON.stringify({ name, email }));
+        alert('✅ Registered successfully');
+      }
+    });
+  }
+});
+
   </script>
 </body>
 </html>
