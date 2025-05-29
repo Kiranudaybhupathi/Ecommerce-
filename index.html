@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LUXEDGE | Elevate Your Style</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>NEONMART | The Future of Shopping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0f172a;
-      --accent: #facc15;
-      --text: #f8fafc;
-      --bg: #1e293b;
+      --glass: rgba(255, 255, 255, 0.1);
+      --blur: blur(20px);
+      --border: rgba(255, 255, 255, 0.2);
+      --text: #f1f5f9;
+      --accent: #38bdf8;
     }
 
     * {
@@ -20,110 +21,76 @@
     }
 
     body {
-      font-family: 'Jost', sans-serif;
-      background-color: var(--bg);
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #020617);
       color: var(--text);
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(to right, #1e40af, #0ea5e9);
-      padding: 2.5rem 1.5rem;
       text-align: center;
-      color: white;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
+      padding: 3rem 1rem;
+      background: radial-gradient(circle at top, #38bdf8 0%, #0f172a 100%);
     }
 
     header h1 {
       font-size: 2.5rem;
-      font-weight: 700;
       margin-bottom: 0.5rem;
-      letter-spacing: 1px;
+      color: white;
     }
 
     header p {
-      font-size: 1.1rem;
-      opacity: 0.95;
+      font-size: 1rem;
+      color: #cbd5e1;
     }
 
     nav {
       display: flex;
-      justify-content: space-around;
-      background-color: #0f172a;
-      padding: 1rem 0;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: #0f172a;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
     }
 
     nav a {
-      color: #f8fafc;
+      color: #94a3b8;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1rem;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: var(--accent);
     }
 
-    .hero {
-      padding: 3rem 1rem;
-      text-align: center;
-      background: linear-gradient(to bottom, #1e293b, #0f172a);
-    }
-
-    .hero h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1rem;
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .btn {
-      background: var(--accent);
-      color: #1e293b;
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #eab308;
-    }
-
-    .products {
+    .grid {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 2rem;
-      padding: 3rem 1rem;
-      background-color: var(--primary);
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .card {
-      background-color: #0f172a;
-      border-radius: 1rem;
+      background: var(--glass);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      transition: transform 0.4s ease;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: translateY(-10px) scale(1.03);
     }
 
     .card img {
       width: 100%;
-      height: 220px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -132,8 +99,9 @@
     }
 
     .card-content h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: white;
     }
 
     .card-content p {
@@ -142,28 +110,28 @@
     }
 
     .price {
-      color: var(--accent);
       margin-top: 0.5rem;
       font-weight: bold;
+      color: var(--accent);
     }
 
     footer {
-      background-color: #020617;
-      color: #64748b;
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      margin-top: 2rem;
+      color: #64748b;
+      border-top: 1px solid #334155;
+      background-color: #0f172a;
     }
 
     @media (min-width: 600px) {
-      .products {
+      .grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (min-width: 900px) {
-      .products {
+      .grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -172,54 +140,48 @@
 <body>
 
   <header>
-    <h1>LUXEDGE</h1>
-    <p>Luxury. Lifestyle. Limitless.</p>
+    <h1>NEONMART</h1>
+    <p>Experience the Future of Online Shopping</p>
   </header>
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">Collection</a>
-    <a href="#">Deals</a>
-    <a href="#">Account</a>
+    <a href="#">Shop</a>
+    <a href="#">New</a>
+    <a href="#">Contact</a>
   </nav>
 
-  <section class="hero">
-    <h2>Upgrade to Timeless Elegance</h2>
-    <p>Explore exclusive fashion, tech, and lifestyle gear curated for a premium experience.</p>
-    <a href="#" class="btn">Browse Now</a>
-  </section>
-
-  <section class="products">
+  <section class="grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1614285413091-5a7b3b999dcf" alt="Luxury Watch">
+      <img src="https://images.unsplash.com/photo-1614285413091-5a7b3b999dcf" alt="Watch">
       <div class="card-content">
-        <h3>Rolexa Midnight</h3>
-        <p>Precision-crafted for the elite wristwear lover.</p>
-        <p class="price">$999</p>
+        <h3>HyperEdge Watch</h3>
+        <p>Luxury timepiece with futuristic design.</p>
+        <p class="price">$850</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Designer Bag">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Sneakers">
       <div class="card-content">
-        <h3>Elite BagPack</h3>
-        <p>Designer crafted, functionally genius.</p>
-        <p class="price">$699</p>
+        <h3>NeoFlex Sneakers</h3>
+        <p>Cloud walking shoes with neon soul.</p>
+        <p class="price">$499</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1585386959984-a41552262d34" alt="Smart Glasses">
+      <img src="https://images.unsplash.com/photo-1585386959984-a41552262d34" alt="Glasses">
       <div class="card-content">
-        <h3>Vision AR Glass</h3>
-        <p>Style meets future with real-time AR overlays.</p>
-        <p class="price">$1,299</p>
+        <h3>GlassX Pro</h3>
+        <p>AR Smart Glasses with futuristic UI</p>
+        <p class="price">$1299</p>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 LUXEDGE. Designed to Amaze You ✨ | By Bhupathi Uday Kiran
+    &copy; 2025 NEONMART | Designed by Bhupathi Uday Kiran 🚀
   </footer>
 
 </body>
