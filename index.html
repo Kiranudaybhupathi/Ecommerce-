@@ -4,74 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ShopifyX - Your Online Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background: linear-gradient(120deg, #f9f9f9, #e3f2fd);
+      background: linear-gradient(145deg, #e3f2fd, #ffffff);
       color: #333;
+      min-height: 100vh;
     }
 
     header {
-      background: linear-gradient(to right, #1e88e5, #42a5f5);
-      padding: 1.5rem;
+      background: linear-gradient(to right, #0d47a1, #42a5f5);
       color: white;
       text-align: center;
-      animation: fadeInDown 1s ease;
+      padding: 2rem 1rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     nav {
-      display: flex; justify-content: space-between; align-items: center;
+      background: #1565c0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 1rem;
-      background: #1976d2;
-      color: white;
       flex-wrap: wrap;
-      position: relative;
     }
 
     .nav-left {
-      font-size: 1.5rem;
       font-weight: bold;
+      color: white;
+      font-size: 1.5rem;
     }
 
     .nav-right {
       display: flex;
-      align-items: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .nav-right button {
-      background: white; color: #1976d2; border: none; padding: 0.5rem 1rem;
-      border-radius: 5px; cursor: pointer;
-      transition: background 0.3s;
+      background: white;
+      color: #1565c0;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      cursor: pointer;
     }
 
     .nav-right button:hover {
       background: #bbdefb;
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: white;
-    }
-
-    .search-box input {
-      padding: 0.5rem; border-radius: 4px; border: none;
-    }
-
     section {
       display: none;
-      padding: 2rem;
+      padding: 2rem 1rem;
       animation: fadeIn 0.5s ease-in;
     }
 
@@ -81,12 +81,16 @@
 
     .hero {
       background: linear-gradient(to right, #2196f3, #21cbf3);
-      color: white; padding: 3rem; text-align: center;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-radius: 10px;
       animation: slideIn 1s ease;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .products-container {
@@ -100,15 +104,16 @@
     .product {
       background: white;
       padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       width: 220px;
-      transition: transform 0.3s ease, box-shadow 0.3s;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
     }
 
     .product:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
     .product img {
@@ -118,20 +123,19 @@
 
     .product button {
       margin-top: 0.5rem;
-      width: 100%;
-      padding: 0.5rem;
       background: #1976d2;
       color: white;
+      padding: 0.5rem;
+      width: 100%;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    .scroll-section {
-      overflow-x: auto;
-      display: flex;
-      gap: 1rem;
-      padding: 1rem 0;
+    .product button:hover {
+      background: #1565c0;
     }
 
     .auth-form, .cart-item, .admin-panel {
@@ -140,7 +144,7 @@
       margin: auto;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     input[type="text"], input[type="password"], input[type="email"] {
@@ -148,32 +152,32 @@
       padding: 0.75rem;
       margin-top: 0.5rem;
       margin-bottom: 1rem;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      border-radius: 4px;
     }
 
     button.full {
       width: 100%;
       padding: 0.75rem;
       font-weight: bold;
-      background: #2196f3;
+      background: #1976d2;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: 0.3s ease;
     }
 
     button.full:hover {
-      background: #1e88e5;
+      background: #0d47a1;
     }
 
     footer {
-      background: #1976d2;
+      background: #1565c0;
       color: white;
       padding: 1rem;
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
     @keyframes fadeIn {
@@ -193,23 +197,9 @@
 
     @media (max-width: 768px) {
       .nav-right {
+        width: 100%;
         flex-direction: column;
-        display: none;
-        width: 100%;
-        background: #1565c0;
-        padding: 1rem 0;
-      }
-
-      .nav-right.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .search-box {
-        width: 100%;
+        gap: 0.5rem;
         margin-top: 1rem;
       }
 
@@ -229,14 +219,7 @@
 
   <nav>
     <div class="nav-left">ShopifyX</div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <div class="nav-right" id="nav-links">
+    <div class="nav-right">
       <button onclick="showSection('home')">Home</button>
       <button onclick="showSection('products')">Shop</button>
       <button onclick="showSection('cart')">Cart</button>
@@ -246,7 +229,6 @@
     </div>
   </nav>
 
-  <!-- Home -->
   <section id="home" class="active">
     <div class="hero">
       <h1>Welcome to ShopifyX</h1>
@@ -254,18 +236,17 @@
     </div>
   </section>
 
-  <!-- Products -->
   <section id="products">
     <h2 style="text-align:center;">Featured Products</h2>
     <div class="products-container">
       <div class="product">
-        <img src="https://via.placeholder.com/220x150" alt="Product">
+        <img src="https://via.placeholder.com/220x150" alt="Headphones">
         <h3>Wireless Headphones</h3>
         <p>$59.99</p>
         <button onclick="comingSoon()">Add to Cart</button>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/220x150" alt="Product">
+        <img src="https://via.placeholder.com/220x150" alt="Smart Watch">
         <h3>Smart Watch</h3>
         <p>$129.99</p>
         <button onclick="comingSoon()">Add to Cart</button>
@@ -273,9 +254,8 @@
     </div>
   </section>
 
-  <!-- Cart -->
   <section id="cart">
-    <h2>Your Shopping Cart</h2>
+    <h2 style="text-align:center;">Your Shopping Cart</h2>
     <div class="cart-item">
       <p><strong>Wireless Headphones</strong> - $59.99</p>
       <button class="full" onclick="comingSoon()">Remove</button>
@@ -286,7 +266,6 @@
     </div>
   </section>
 
-  <!-- Login -->
   <section id="login">
     <h2 style="text-align:center;">Login</h2>
     <div class="auth-form">
@@ -298,7 +277,6 @@
     </div>
   </section>
 
-  <!-- Register -->
   <section id="register">
     <h2 style="text-align:center;">Register</h2>
     <div class="auth-form">
@@ -312,7 +290,6 @@
     </div>
   </section>
 
-  <!-- Admin -->
   <section id="admin">
     <h2 style="text-align:center;">Admin Panel</h2>
     <div class="admin-panel">
@@ -328,20 +305,13 @@
 
   <script>
     function showSection(id) {
-      const sections = document.querySelectorAll("section");
-      sections.forEach(sec => sec.classList.remove("active"));
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
       document.getElementById(id).classList.add("active");
     }
 
     function comingSoon() {
       alert("🚧 This feature is coming soon!");
     }
-
-    function toggleMenu() {
-      const nav = document.getElementById("nav-links");
-      nav.classList.toggle("show");
-    }
   </script>
-
 </body>
 </html>
