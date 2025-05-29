@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,146 +11,164 @@
       --border: rgba(255, 255, 255, 0.2);
       --text: #f1f5f9;
       --accent: #38bdf8;
-    }
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom right, #0f172a, #020617);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to bottom right, #0f172a, #020617);
-      color: var(--text);
-      line-height: 1.6;
-    }
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: radial-gradient(circle at top, #38bdf8 0%, #0f172a 100%);
+}
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: radial-gradient(circle at top, #38bdf8 0%, #0f172a 100%);
-    }
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: white;
-    }
+header p {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
 
-    header p {
-      font-size: 1rem;
-      color: #cbd5e1;
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      background: #0f172a;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+.menu-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #94a3b8;
+  display: block;
+}
 
-    nav a {
-      color: #94a3b8;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+.nav-links {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
 
-    nav a:hover {
-      color: var(--accent);
-    }
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
 
-    .grid {
-      display: grid;
-      gap: 2rem;
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+.nav-links a:hover {
+  color: var(--accent);
+}
 
-    .card {
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      border: 1px solid var(--border);
-      border-radius: 1.5rem;
-      overflow: hidden;
-      transition: transform 0.4s ease;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
-    }
+input[type="checkbox"] {
+  display: none;
+}
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.03);
-    }
+input[type="checkbox"]:checked ~ .nav-links {
+  display: flex;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+.grid {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .card-content {
-      padding: 1rem;
-    }
+.card {
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+}
 
-    .card-content h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: white;
-    }
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
 
-    .card-content p {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-    }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .price {
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: var(--accent);
-    }
+.card-content {
+  padding: 1rem;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #64748b;
-      border-top: 1px solid #334155;
-      background-color: #0f172a;
-    }
+.card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
 
-    @media (min-width: 600px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+.card-content p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
 
-    @media (min-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
+.price {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  border-top: 1px solid #334155;
+  background-color: #0f172a;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
   </style>
 </head>
-<body>
-
-  <header>
+<body>  <header>
     <h1>NEONMART</h1>
     <p>Experience the Future of Online Shopping</p>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">New</a>
-    <a href="#">Contact</a>
-  </nav>
-
-  <section class="grid">
+  </header>  <nav>
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    <input type="checkbox" id="menu-toggle">
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">New</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>  <section class="grid">
     <div class="card">
       <img src="https://images.unsplash.com/photo-1614285413091-5a7b3b999dcf" alt="Watch">
       <div class="card-content">
@@ -159,30 +176,25 @@
         <p>Luxury timepiece with futuristic design.</p>
         <p class="price">$850</p>
       </div>
-    </div>
+    </div><div class="card">
+  <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Sneakers">
+  <div class="card-content">
+    <h3>NeoFlex Sneakers</h3>
+    <p>Cloud walking shoes with neon soul.</p>
+    <p class="price">$499</p>
+  </div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Sneakers">
-      <div class="card-content">
-        <h3>NeoFlex Sneakers</h3>
-        <p>Cloud walking shoes with neon soul.</p>
-        <p class="price">$499</p>
-      </div>
-    </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1585386959984-a41552262d34" alt="Glasses">
+  <div class="card-content">
+    <h3>GlassX Pro</h3>
+    <p>AR Smart Glasses with futuristic UI</p>
+    <p class="price">$1299</p>
+  </div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1585386959984-a41552262d34" alt="Glasses">
-      <div class="card-content">
-        <h3>GlassX Pro</h3>
-        <p>AR Smart Glasses with futuristic UI</p>
-        <p class="price">$1299</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
+  </section>  <footer>
     &copy; 2025 NEONMART | Designed by Bhupathi Uday Kiran 🚀
-  </footer>
-
-</body>
+  </footer></body>
 </html>
