@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeonMart - Dream Store</title>
+  <title>NextGen Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0f0f0f;
-      --glass: rgba(255, 255, 255, 0.1);
-      --blur: blur(10px);
+      --glass: rgba(255, 255, 255, 0.05);
+      --blur: blur(15px);
       --border: rgba(255, 255, 255, 0.2);
-      --neon: #00f7ff;
+      --neon: #00ffe7;
     }
 
     * {
@@ -25,12 +25,13 @@
       background: var(--bg);
       color: white;
       min-height: 100vh;
-      padding: 1rem;
+      overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
+      position: relative;
     }
 
     header h1 {
@@ -39,39 +40,55 @@
       text-shadow: 0 0 10px var(--neon);
     }
 
-    .menu-toggle {
-      display: block;
-      width: 40px;
-      margin: 1rem auto;
-      cursor: pointer;
+    /* Hamburger Menu */
+    #menu-toggle {
+      display: none;
     }
 
-    .menu-toggle span {
+    .menu-btn {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-btn span {
       display: block;
       height: 4px;
       background: var(--neon);
-      margin: 6px 0;
-      border-radius: 4px;
+      margin: 5px 0;
+      border-radius: 3px;
+      transition: all 0.3s;
     }
 
     nav {
-      text-align: center;
-      margin-bottom: 2rem;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 70%;
+      height: 100%;
+      background: var(--glass);
+      backdrop-filter: var(--blur);
+      border-right: 1px solid var(--border);
+      padding-top: 4rem;
+      transition: left 0.4s ease;
+      z-index: 1;
+    }
+
+    #menu-toggle:checked + .menu-btn + nav {
+      left: 0;
     }
 
     nav a {
       display: block;
-      padding: 0.75rem;
-      background: var(--glass);
-      margin: 0.5rem auto;
-      width: 80%;
-      border-radius: 10px;
-      backdrop-filter: var(--blur);
-      border: 1px solid var(--border);
-      text-decoration: none;
+      padding: 1rem;
       color: var(--neon);
+      text-decoration: none;
       font-weight: bold;
-      transition: all 0.3s;
+      border-bottom: 1px solid var(--border);
     }
 
     nav a:hover {
@@ -80,33 +97,34 @@
     }
 
     section {
+      padding: 2rem 1.5rem;
       display: none;
-      max-width: 600px;
-      margin: auto;
-      background: var(--glass);
-      padding: 2rem;
-      border-radius: 20px;
-      backdrop-filter: var(--blur);
-      border: 1px solid var(--border);
-      animation: fadeIn 0.6s ease-in-out forwards;
+      animation: fade 0.5s ease-in-out;
     }
 
     section:target {
       display: block;
     }
 
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
     .product-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      padding: 1rem;
-      margin: 1rem 0;
-      text-align: center;
+      background: var(--glass);
       border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      backdrop-filter: var(--blur);
     }
 
     .product-card img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .btn {
@@ -118,82 +136,108 @@
       font-weight: bold;
       border-radius: 5px;
       text-decoration: none;
+      transition: 0.3s ease;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .btn:hover {
+      background: white;
     }
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      padding: 2rem;
+      color: #aaa;
       font-size: 0.9rem;
-      color: #888;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(min-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        width: 250px;
+      }
+    }
+
+    @media(min-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Hamburger Toggle -->
+  <input type="checkbox" id="menu-toggle" hidden>
+  <label for="menu-toggle" class="menu-btn">
+    <span></span><span></span><span></span>
+  </label>
+
   <header>
-    <h1>NEONMART</h1>
-    <div class="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
+    <h1>NextGen Store</h1>
   </header>
 
   <nav>
     <a href="#home">🏠 Home</a>
-    <a href="#shop">🛒 Shop</a>
+    <a href="#shop">🛍️ Shop</a>
     <a href="#login">🔐 Login</a>
     <a href="#register">📝 Register</a>
-    <a href="#admin">⚙️ Admin</a>
+    <a href="#admin">🛠️ Admin</a>
   </nav>
 
   <section id="home">
-    <h2>Welcome to NeonMart</h2>
-    <p>Shop futuristic gadgets, wearables, and accessories at glowing deals!</p>
+    <h2>Welcome to the Future</h2>
+    <p>Where shopping feels like magic. Explore futuristic gadgets now.</p>
   </section>
 
   <section id="shop">
-    <h2>Top Picks</h2>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Product 1">
-      <h3>Neon Headphones</h3>
-      <p>$59.99</p>
-      <a href="#" class="btn">Add to Cart</a>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Product 2">
-      <h3>Smart Neon Watch</h3>
-      <p>$129.99</p>
-      <a href="#" class="btn">Add to Cart</a>
+    <h2>Top Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 1" />
+        <h3>GlowBand Pro</h3>
+        <p>$89.99</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 2" />
+        <h3>Smart Glass</h3>
+        <p>$149.99</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 3" />
+        <h3>Neon Earbuds</h3>
+        <p>$59.99</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
     </div>
   </section>
 
   <section id="login">
     <h2>Login</h2>
-    <p>Form coming soon...</p>
+    <p>Secure portal for your digital shopping cart.</p>
   </section>
 
   <section id="register">
-    <h2>Register</h2>
-    <p>Form coming soon...</p>
+    <h2>Create Account</h2>
+    <p>Join the shopping revolution.</p>
   </section>
 
   <section id="admin">
     <h2>Admin Panel</h2>
-    <p>Manage products, orders, and users.</p>
+    <p>Manage inventory, orders & more.</p>
   </section>
 
   <footer>
-    &copy; 2025 NeonMart. All rights reserved.
+    &copy; 2025 NextGen Store. All rights reserved.
   </footer>
 
 </body>
