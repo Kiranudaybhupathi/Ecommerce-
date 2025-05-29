@@ -3,122 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShopifyX - Mobile Store</title>
+  <title>ShopifyX</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f7f9fc;
-      height: 100%;
-      width: 100%;
-      overflow-x: hidden;
+      box-sizing: border-box;
     }
-
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f8;
+    }
     header {
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
-      padding: 2rem 1rem;
+      padding: 1rem;
       text-align: center;
     }
-
     header h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
-
-    #menu-toggle {
+    .menu-toggle {
       display: none;
     }
-
-    label[for="menu-toggle"] {
+    .menu-icon {
       display: block;
-      background: #2a5298;
-      color: white;
-      padding: 1rem;
       text-align: right;
+      padding: 1rem;
+      background-color: #2a5298;
+      color: white;
       font-size: 1.5rem;
       cursor: pointer;
     }
-
     nav {
       display: none;
       background: #2a5298;
-      text-align: center;
     }
-
     nav a {
       display: block;
       color: white;
+      text-decoration: none;
       padding: 1rem;
       border-top: 1px solid rgba(255,255,255,0.2);
-      text-decoration: none;
-      font-weight: bold;
     }
-
-    #menu-toggle:checked + label + nav {
+    .menu-toggle:checked + .menu-icon + nav {
       display: block;
     }
-
     section {
       padding: 2rem 1rem;
-      display: none;
       min-height: 100vh;
     }
-
-    section:target {
-      display: block;
-      animation: fadeIn 0.3s ease-in;
+    #home {
+      background: #fff;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    #shop {
+      background: #fefefe;
     }
-
-    .hero {
-      background: linear-gradient(to right, #ff9966, #ff5e62);
-      color: white;
-      padding: 2rem 1rem;
-      border-radius: 10px;
-      text-align: center;
+    #cart {
+      background: #fff;
     }
-
-    .products {
-      display: grid;
-      gap: 1.5rem;
-      margin-top: 2rem;
+    #login {
+      background: #fefefe;
     }
-
-    .product {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: #2a5298;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
     footer {
       background: #2a5298;
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
     }
   </style>
 </head>
@@ -129,65 +81,38 @@
     <p>Only Deals. Only Vibes. 🛍️</p>
   </header>
 
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle">&#9776;</label>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#shop">Shop</a>
     <a href="#cart">Cart</a>
     <a href="#login">Login</a>
-    <a href="#register">Register</a>
-    <a href="#admin">Admin</a>
   </nav>
 
   <section id="home">
-    <div class="hero">
-      <h2>Welcome to ShopifyX</h2>
-      <p>Best mobile-friendly shopping experience</p>
-    </div>
+    <h2>Welcome to ShopifyX</h2>
+    <p>Experience mobile-first shopping at its finest.</p>
   </section>
 
   <section id="shop">
-    <h2>Shop Now</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x150" alt="Phone" />
-        <h3>Smartphone Max</h3>
-        <p>$699</p>
-        <a class="btn" href="#cart">Add to Cart</a>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/300x150" alt="Watch" />
-        <h3>Smart Watch Pro</h3>
-        <p>$149</p>
-        <a class="btn" href="#cart">Add to Cart</a>
-      </div>
-    </div>
+    <h2>Our Products</h2>
+    <p>Explore amazing items crafted for your needs.</p>
   </section>
 
   <section id="cart">
     <h2>Your Cart</h2>
-    <p>You have 2 items in your cart.</p>
-    <a class="btn" href="#">Checkout</a>
+    <p>No items yet. Start shopping!</p>
   </section>
 
   <section id="login">
     <h2>Login</h2>
-    <p>Login form coming soon...</p>
-  </section>
-
-  <section id="register">
-    <h2>Register</h2>
-    <p>Create your account to shop better!</p>
-  </section>
-
-  <section id="admin">
-    <h2>Admin Panel</h2>
-    <p>Manage products and orders here.</p>
+    <p>Enter your credentials to access your account.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 ShopifyX | Built mobile-first 🚀</p>
+    <p>&copy; 2025 ShopifyX | Built with ❤️ for mobile users</p>
   </footer>
 
 </body>
