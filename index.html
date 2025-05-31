@@ -3,71 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloudiva – Shop Smarter</title>
+  <title>Cloudiva – Your Smart Shop</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .star::before { content: '⭐'; }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="text-2xl font-bold text-blue-600">Cloudiva</div>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
         <a href="#" class="hover:text-blue-600">Home</a>
         <a href="#" class="hover:text-blue-600">Shop</a>
         <a href="#" class="hover:text-blue-600">Categories</a>
-        <a href="#" class="hover:text-blue-600">About</a>
         <a href="#" class="hover:text-blue-600">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
-        <input type="text" placeholder="Search..." class="hidden md:block px-3 py-1.5 border rounded-md" />
-        <img src="https://img.icons8.com/ios-filled/24/user.png" alt="User" />
+        <input type="text" placeholder="Search..." class="hidden md:block px-3 py-1.5 border rounded-md text-sm" />
+        <img src="https://img.icons8.com/ios-filled/24/user.png" class="w-6 h-6" />
         <div class="relative">
-          <img src="https://img.icons8.com/ios-filled/24/shopping-cart.png" alt="Cart" />
-          <span class="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-1.5 py-0.5 rounded-full">3</span>
+          <img src="https://img.icons8.com/ios-filled/24/shopping-cart.png" />
+          <span class="absolute -top-1 -right-2 text-xs bg-red-600 text-white px-1.5 rounded-full">2</span>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-50 via-white to-purple-50 py-20 relative overflow-hidden">
+  <section class="bg-gradient-to-r from-blue-100 via-white to-purple-100 py-20">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-        Cloud-Powered Shopping, Redefined
-      </h1>
-      <p class="text-gray-600 max-w-xl mx-auto mb-6">
-        Discover the future of online shopping with exclusive deals, smart recommendations, and lightning-fast delivery.
-      </p>
-      <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Start Shopping</a>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Experience Smart Shopping with Cloudiva</h1>
+      <p class="text-gray-600 max-w-xl mx-auto mb-6">Discover top deals, best-selling products, and exclusive offers in one place.</p>
+      <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Shop Now</a>
     </div>
-    <div class="absolute inset-y-0 left-0 w-40 bg-gradient-to-t from-blue-200 to-transparent blur-2xl opacity-30"></div>
-    <div class="absolute inset-y-0 right-0 w-40 bg-gradient-to-b from-purple-200 to-transparent blur-2xl opacity-30"></div>
   </section>
 
   <!-- Categories -->
   <section class="py-14 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-2xl font-bold mb-8 text-center">Explore Categories</h2>
+      <h2 class="text-2xl font-bold text-center mb-10">Shop by Category</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-6 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
           <div class="text-4xl mb-2">📱</div>
           <p>Electronics</p>
         </div>
-        <div class="p-6 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
           <div class="text-4xl mb-2">👗</div>
           <p>Fashion</p>
         </div>
-        <div class="p-6 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
           <div class="text-4xl mb-2">🏠</div>
-          <p>Home & Living</p>
+          <p>Home</p>
         </div>
-        <div class="p-6 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 rounded-lg bg-gray-50 hover:shadow-lg transition">
           <div class="text-4xl mb-2">💻</div>
           <p>Gadgets</p>
         </div>
@@ -78,44 +71,56 @@
   <!-- Featured Products -->
   <section class="py-14 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-2xl font-bold mb-8 text-center">Featured Products</h2>
+      <h2 class="text-2xl font-bold text-center mb-10">Featured Products</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <!-- Product Card -->
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://via.placeholder.com/300" alt="Product" class="rounded mb-3 w-full" />
-          <h3 class="font-semibold text-lg">Smartwatch Pro</h3>
-          <p class="text-sm text-gray-500">Advanced fitness features</p>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/300" class="rounded mb-3 w-full" />
+          <h3 class="font-semibold text-lg">Smartwatch X</h3>
+          <p class="text-gray-500 text-sm">Stay connected in style.</p>
+          <div class="flex items-center justify-between mt-3">
+            <span class="font-bold">$99.99</span>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
+          </div>
+          <div class="mt-2 text-yellow-500 text-sm">
+            <span class="star"></span> <span class="star"></span> <span class="star"></span> <span class="star"></span> <span class="text-gray-400 star"></span>
+          </div>
+        </div>
+        <!-- More Cards -->
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/300" class="rounded mb-3 w-full" />
+          <h3 class="font-semibold text-lg">Wireless Earbuds</h3>
+          <p class="text-gray-500 text-sm">Immersive sound, no wires.</p>
+          <div class="flex items-center justify-between mt-3">
+            <span class="font-bold">$49.99</span>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
+          </div>
+          <div class="mt-2 text-yellow-500 text-sm">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/300" class="rounded mb-3 w-full" />
+          <h3 class="font-semibold text-lg">Gaming Mouse</h3>
+          <p class="text-gray-500 text-sm">Precision performance.</p>
+          <div class="flex items-center justify-between mt-3">
+            <span class="font-bold">$39.99</span>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
+          </div>
+          <div class="mt-2 text-yellow-500 text-sm">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="text-gray-400 star"></span><span class="text-gray-400 star"></span>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/300" class="rounded mb-3 w-full" />
+          <h3 class="font-semibold text-lg">Mini Drone</h3>
+          <p class="text-gray-500 text-sm">Aerial views on demand.</p>
           <div class="flex items-center justify-between mt-3">
             <span class="font-bold">$129.99</span>
             <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
           </div>
-        </div>
-        <!-- Repeat 3 more with different dummy data -->
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://via.placeholder.com/300" alt="Product" class="rounded mb-3 w-full" />
-          <h3 class="font-semibold text-lg">Wireless Earbuds</h3>
-          <p class="text-sm text-gray-500">Noise-cancelling, compact</p>
-          <div class="flex items-center justify-between mt-3">
-            <span class="font-bold">$59.99</span>
-            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://via.placeholder.com/300" alt="Product" class="rounded mb-3 w-full" />
-          <h3 class="font-semibold text-lg">Bluetooth Speaker</h3>
-          <p class="text-sm text-gray-500">Waterproof outdoor sound</p>
-          <div class="flex items-center justify-between mt-3">
-            <span class="font-bold">$79.99</span>
-            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://via.placeholder.com/300" alt="Product" class="rounded mb-3 w-full" />
-          <h3 class="font-semibold text-lg">Mini Drone</h3>
-          <p class="text-sm text-gray-500">Capture photos from the sky</p>
-          <div class="flex items-center justify-between mt-3">
-            <span class="font-bold">$149.99</span>
-            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Add</button>
+          <div class="mt-2 text-yellow-500 text-sm">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
           </div>
         </div>
       </div>
@@ -124,23 +129,21 @@
 
   <!-- Features -->
   <section class="py-14 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-        <div>
-          <div class="text-3xl mb-2">🚚</div>
-          <h4 class="font-bold mb-1">Free Shipping</h4>
-          <p class="text-gray-600 text-sm">On orders over $50</p>
-        </div>
-        <div>
-          <div class="text-3xl mb-2">💳</div>
-          <h4 class="font-bold mb-1">Secure Payments</h4>
-          <p class="text-gray-600 text-sm">100% protected checkout</p>
-        </div>
-        <div>
-          <div class="text-3xl mb-2">📞</div>
-          <h4 class="font-bold mb-1">24/7 Support</h4>
-          <p class="text-gray-600 text-sm">Always here for you</p>
-        </div>
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <div>
+        <div class="text-3xl mb-2">🚚</div>
+        <h4 class="font-bold mb-1">Free Shipping</h4>
+        <p class="text-gray-600 text-sm">On all orders over $50</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">💳</div>
+        <h4 class="font-bold mb-1">Secure Payments</h4>
+        <p class="text-gray-600 text-sm">Your data is safe with us</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">📞</div>
+        <h4 class="font-bold mb-1">24/7 Support</h4>
+        <p class="text-gray-600 text-sm">We’re here anytime</p>
       </div>
     </div>
   </section>
@@ -148,28 +151,20 @@
   <!-- Testimonials -->
   <section class="py-14 bg-gray-100">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-8">What Customers Say</h2>
-      <div class="space-y-8">
-        <blockquote class="text-gray-700 italic">
-          “Cloudiva transformed how I shop online. Fast, clean, and intuitive!”
-          <p class="font-semibold mt-2">– Sarah L.</p>
-        </blockquote>
-        <blockquote class="text-gray-700 italic">
-          “Great products, quick shipping, and reliable support. 10/10!”
-          <p class="font-semibold mt-2">– Jason P.</p>
-        </blockquote>
-      </div>
+      <h2 class="text-2xl font-bold mb-8">What Our Users Say</h2>
+      <blockquote class="italic text-gray-700">“This site is faster and better than Amazon for me!” <br /><span class="font-semibold">– Priya R.</span></blockquote>
+      <blockquote class="italic text-gray-700 mt-6">“The UI is so smooth. Loved the drone I ordered!” <br /><span class="font-semibold">– Arjun M.</span></blockquote>
     </div>
   </section>
 
   <!-- Newsletter -->
   <section class="py-14 bg-blue-50">
     <div class="max-w-xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-4">Join Our Newsletter</h2>
-      <p class="mb-6 text-gray-600">Stay updated with new arrivals and discounts</p>
+      <h2 class="text-2xl font-bold mb-4">Stay in the Loop</h2>
+      <p class="mb-6 text-gray-600">Get weekly updates on offers and new products.</p>
       <form class="flex flex-col sm:flex-row gap-3 justify-center">
-        <input type="email" required placeholder="Enter your email" class="px-4 py-2 w-full sm:w-auto border rounded-md" />
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Subscribe</button>
+        <input type="email" placeholder="Enter your email" class="px-4 py-2 w-full sm:w-auto border rounded-md" required />
+        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Subscribe</button>
       </form>
     </div>
   </section>
@@ -179,7 +174,7 @@
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
       <div>
         <h4 class="font-bold mb-2">Cloudiva</h4>
-        <p>Smart shopping powered by cloud technology. Browse smarter.</p>
+        <p>Smart shopping made easy.</p>
       </div>
       <div>
         <h4 class="font-bold mb-2">Company</h4>
@@ -192,19 +187,19 @@
         <h4 class="font-bold mb-2">Help</h4>
         <ul>
           <li><a href="#" class="hover:underline">Support</a></li>
-          <li><a href="#" class="hover:underline">Shipping</a></li>
+          <li><a href="#" class="hover:underline">Returns</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-bold mb-2">Follow Us</h4>
-        <div class="flex space-x-4">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/twitter.png" alt="Twitter" /></a>
+        <h4 class="font-bold mb-2">Connect</h4>
+        <div class="flex space-x-4 mt-2">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/twitter.png" /></a>
         </div>
       </div>
     </div>
-    <p class="text-center mt-6 text-xs text-gray-300">&copy; 2025 Cloudiva. All rights reserved.</p>
+    <p class="text-center text-xs text-gray-300 mt-6">&copy; 2025 Cloudiva. All rights reserved.</p>
   </footer>
 
 </body>
