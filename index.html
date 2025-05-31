@@ -1,261 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShopifyX 🔥</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --dark: #0d0d0d;
-      --primary: #00e5ff;
-      --text: #ffffff;
-      --card: #1e1e1e;
-      --accent: #ff4081;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloudiva - Modern eCommerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" />
+  </head>
+  <body class="bg-white text-gray-800 font-sans">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">Cloudiva</h1>
+        <ul class="hidden md:flex gap-6 items-center text-sm font-medium">
+          <li><a href="#" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#" class="hover:text-blue-600">Shop</a></li>
+          <li><a href="#" class="hover:text-blue-600">About</a></li>
+          <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+          <li>
+            <a href="#" class="text-xl text-gray-600 hover:text-blue-600">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <ul class="flex flex-col gap-4">
+          <li><a href="#" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#" class="hover:text-blue-600">Shop</a></li>
+          <li><a href="#" class="hover:text-blue-600">About</a></li>
+          <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+          <li>
+            <a href="#" class="text-xl text-gray-600 hover:text-blue-600">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #0f0f0f, #1c1c1c);
-      color: var(--text);
-    }
+    <!-- Hero Section -->
+    <section class="bg-blue-50 py-16 px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-blue-700">Elevate Your Style with Cloudiva</h2>
+      <p class="text-gray-600 mb-6 text-lg">Discover premium fashion and accessories crafted for modern living.</p>
+      <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Shop Now</a>
+    </section>
 
-    header {
-      background: var(--primary);
-      color: #000;
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
+    <!-- Featured Products -->
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+      <h3 class="text-3xl font-semibold text-center mb-10 text-gray-800">Featured Products</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product Card -->
+        <div class="bg-white shadow-lg rounded-lg p-4 text-center">
+          <img src="https://source.unsplash.com/300x200/?shoes" alt="Product 1" class="mx-auto mb-4 rounded">
+          <h4 class="font-medium text-lg mb-2">Urban Sneakers</h4>
+          <p class="text-blue-600 font-semibold mb-2">₹2,199</p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
 
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      letter-spacing: 3px;
-    }
+        <div class="bg-white shadow-lg rounded-lg p-4 text-center">
+          <img src="https://source.unsplash.com/300x200/?watch" alt="Product 2" class="mx-auto mb-4 rounded">
+          <h4 class="font-medium text-lg mb-2">Smartwatch GenZ</h4>
+          <p class="text-blue-600 font-semibold mb-2">₹3,499</p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
 
-    nav {
-      background: var(--card);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        <div class="bg-white shadow-lg rounded-lg p-4 text-center">
+          <img src="https://source.unsplash.com/300x200/?backpack" alt="Product 3" class="mx-auto mb-4 rounded">
+          <h4 class="font-medium text-lg mb-2">Travel Backpack</h4>
+          <p class="text-blue-600 font-semibold mb-2">₹1,299</p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
 
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-    }
+        <div class="bg-white shadow-lg rounded-lg p-4 text-center">
+          <img src="https://source.unsplash.com/300x200/?headphones" alt="Product 4" class="mx-auto mb-4 rounded">
+          <h4 class="font-medium text-lg mb-2">Noise Cancelling Headphones</h4>
+          <p class="text-blue-600 font-semibold mb-2">₹2,799</p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
+      </div>
+    </section>
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      transition: background 0.3s ease;
-    }
+    <!-- Newsletter Signup -->
+    <section class="bg-blue-600 py-12 px-6 text-center text-white">
+      <h4 class="text-2xl font-semibold mb-4">Join our newsletter 🎉</h4>
+      <p class="mb-6">Get the latest updates and exclusive offers straight to your inbox.</p>
+      <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded text-gray-800" required>
+        <button type="submit" class="bg-white text-blue-600 px-6 py-2 rounded hover:bg-gray-100 font-semibold">Subscribe</button>
+      </form>
+    </section>
 
-    .nav-links a:hover {
-      background: var(--accent);
-    }
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600">
+      <p>&copy; 2025 Cloudiva. All rights reserved.</p>
+      <div class="mt-2 flex justify-center gap-4 text-blue-600">
+        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">Terms</a>
+        <a href="#" class="hover:underline">Support</a>
+      </div>
+    </footer>
 
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: var(--text);
-      margin: 4px 0;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1606813909345-b1f7b49c62f3') no-repeat center/cover;
-      padding: 4rem 2rem;
-      text-align: center;
-      color: var(--text);
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-    }
-
-    .hero p {
-      margin-top: 1rem;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    .section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    .card h3 {
-      margin-bottom: 0.7rem;
-      color: var(--primary);
-    }
-
-    .card p {
-      color: #ccc;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 0.9rem;
-      margin: 0.6rem 0;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    input {
-      background: #2d2d2d;
-      color: #fff;
-    }
-
-    button {
-      background: var(--primary);
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    button:hover {
-      background: #00c5e6;
-    }
-
-    .dev-note {
-      margin-top: 0.5rem;
-      text-align: center;
-      color: #999;
-      font-size: 0.85rem;
-    }
-
-    footer {
-      background: var(--card);
-      padding: 1rem;
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background: var(--card);
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>ShopifyX</h1>
-  </header>
-
-  <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">🏠 Home</a>
-      <a href="#shop">🛍️ Shop</a>
-      <a href="#login">🔐 Login</a>
-      <a href="#register">📝 Register</a>
-    </div>
-  </nav>
-
-  <div class="hero" id="home">
-    <h2>Only Deals. Only Vibes. 🛒</h2>
-    <p>Explore stylish gadgets and elite experiences. Built by devs, for you.</p>
-  </div>
-
-  <div class="section" id="shop">
-    <div class="card">
-      <h3>🔥 Smart Watch Pro</h3>
-      <p>₹2,499 - Health tracking, notifications & more!</p>
-    </div>
-    <div class="card">
-      <h3>🎧 Wireless Bass Headphones</h3>
-      <p>₹1,899 - Deep bass, long battery, sleek design.</p>
-    </div>
-    <div class="card">
-      <h3>📷 Action Camera</h3>
-      <p>₹4,299 - 4K recording, waterproof, GoPro killer.</p>
-    </div>
-  </div>
-
-  <div class="section" id="login">
-    <div class="card">
-      <h3>Login</h3>
-      <input type="text" placeholder="Username or Email" />
-      <input type="password" placeholder="Password" />
-      <button>Login</button>
-      <p class="dev-note">🔧 Login functionality coming soon.</p>
-    </div>
-  </div>
-
-  <div class="section" id="register">
-    <div class="card">
-      <h3>Register</h3>
-      <input type="text" placeholder="Full Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Register</button>
-      <p class="dev-note">🚧 Registration feature under development.</p>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 ShopifyX • Built with ❤️ by Uday Kiran 
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('active');
-    }
-  </script>
-
-</body>
+    <!-- Toggle Mobile Menu -->
+    <script>
+      document.getElementById('menu-btn').addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
 </html>
